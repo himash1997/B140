@@ -1,5 +1,5 @@
 # load dataset
-df <- read.csv("transportation-fuels-inventory-beginning-2004-1.csv")
+df <- read.csv("data/transportation-fuels-inventory-beginning-2004-1.csv")
 
 # check structure
 #str(df)
@@ -27,6 +27,9 @@ head(fuel_data)
 
 ###-------histogram for crude oil
 
+# Save histogram as PNG
+png("output/histogram_crude.png", width = 1200, height = 800)
+
 #thousand barrels → million barrels:
 fuel_data$Crude_million <- fuel_data$Crude / 1000
 
@@ -41,3 +44,4 @@ hist(fuel_data$Crude,
      border = "black",
      ylim = c(0, 150))
 
+dev.off()
