@@ -17,4 +17,22 @@ fuel_data <- data.frame(Date = df$Date,
                         Crude = crude,
                         Gasoline = gasoline)
 
+#checking
 head(fuel_data)
+
+###-------histogram for crude oil
+
+#thousand barrels → million barrels:
+fuel_data$Crude_million <- fuel_data$Crude / 1000
+
+h <- hist(fuel_data$Crude, plot = FALSE)
+
+hist(fuel_data$Crude,
+     breaks = 40,
+     main = "Histogram of U.S. Crude Oil Stocks",
+     xlab = "Crude Oil Stocks (Thousand Barrels)",
+     ylab = "Frequency",
+     col = "lightblue",
+     border = "black",
+     ylim = c(0, 150))
+
