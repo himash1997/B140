@@ -3,7 +3,9 @@ df <- read.csv("transportation-fuels-inventory-beginning-2004-1.csv")
 
 # check structure
 str(df)
+names(df)
 
-# covert Date column
-df$Date <- as.Date(df$Date, format = "%m/%d/%Y")
-str(df)
+#convert data types
+df$Date <- as.Date(df$Date, tryFormats = c("%m/%d/%Y", "%d/%m/%Y"))
+#str(df)
+
