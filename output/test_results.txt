@@ -1,0 +1,22 @@
+Shapiro-Wilk Normality Tests:
+
+	Shapiro-Wilk normality test
+
+data:  analysis_data$confirmed[analysis_data$group == "TRUE"]
+W = 0.11169, p-value < 2.2e-16
+
+
+	Shapiro-Wilk normality test
+
+data:  analysis_data$confirmed[analysis_data$group == "FALSE"]
+W = 0.43146, p-value = 1.209e-12
+
+
+Wilcoxon Rank-Sum Test:
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  confirmed by group
+W = 3585, p-value = 0.1068
+alternative hypothesis: true location shift is not equal to 0
+
