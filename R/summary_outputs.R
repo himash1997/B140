@@ -9,3 +9,8 @@ df$group <- as.factor(df$group)
 library(dplyr)
 
 analysis_data <- df[, c("group", "confirmed")]
+
+# 1. Missing Value Report
+missing_report <- sapply(df, function(x) sum(is.na(x)))
+write.csv(missing_report, "output/missing_values_report.csv", row.names = TRUE)
+
