@@ -1,0 +1,3 @@
+"group","count","mean_confirmed","median_confirmed","sd_confirmed"
+"FALSE",50,70.88,14.5,171.715312571211
+"TRUE",124,63.3145161290323,9,406.926420446605
