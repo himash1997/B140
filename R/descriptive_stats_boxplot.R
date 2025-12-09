@@ -21,3 +21,17 @@ stats <- analysis_data %>%
   )
 
 print(stats)
+
+
+# ---- BOXPLOT VISUALISATION ----
+png("output/boxplot_group_confirmed_log.png", width = 1200, height = 800)
+
+boxplot(log10(confirmed) ~ group,
+        data = analysis_data,
+        main = "Log-Scaled Boxplot of Confirmed Cases by Group",
+        xlab = "Group (TRUE = Cluster Infection, FALSE = Isolated Infection)",
+        ylab = "log10(Number of Confirmed Cases)",
+        col = c("lightgreen", "lightblue"))
+
+dev.off()
+
