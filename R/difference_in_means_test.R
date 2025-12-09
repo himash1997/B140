@@ -10,3 +10,8 @@ shapiro_false <- shapiro.test(analysis_data$confirmed[analysis_data$group == "FA
 
 shapiro_true
 shapiro_false
+
+#Perform Wilcoxon Rank-Sum Test (Non-parametric)
+wilcox_result <- wilcox.test(confirmed ~ group, data = analysis_data, exact = FALSE)
+wilcox_result
+
