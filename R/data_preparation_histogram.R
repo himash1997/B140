@@ -24,14 +24,18 @@ analysis_data$group <- as.factor(analysis_data$group)
 # Save histogram as PNG
 png("output/histogram_confirmed.png", width = 1200, height = 800)
 
-h <- hist(analysis_data$confirmed,
+#Filter typical outbreaks only for visualization
+filtered <- analysis_data$confirmed[analysis_data$confirmed < 500]
+#max_val <- max(filtered, na.rm = TRUE)
+
+h <- hist(filtered,
           breaks = 40,
-          main = "Histogram of Confirmed COVID-19 Cases",
+          main = "Histogram of Confirmed COVID-19 Cases (< 500 Cases)",
           xlab = "Number of Confirmed Cases",
           ylab = "Frequency",
           col = "lightblue",
           border = "black",
-          ylim = c(0, max(hist(analysis_data$confirmed, plot = FALSE)$counts) * 1.2)
+          ylim = c(0, 100)
 )
 
 dev.off()
