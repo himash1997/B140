@@ -15,3 +15,12 @@ shapiro_false
 wilcox_result <- wilcox.test(confirmed ~ group, data = analysis_data, exact = FALSE)
 wilcox_result
 
+#Save results
+sink("output/test_results.txt")
+cat("Shapiro-Wilk Normality Tests:\n")
+print(shapiro_true)
+print(shapiro_false)
+
+cat("\nWilcoxon Rank-Sum Test:\n")
+print(wilcox_result)
+sink()
